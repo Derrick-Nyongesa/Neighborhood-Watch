@@ -14,6 +14,9 @@ class NeighbourHood(models.Model):
     police_number = models.IntegerField(null=True)
     date = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
+    class Meta:
+       ordering = ['-date']
+
     def __str__(self):
         return f'{self.name} neighbhood'
 
@@ -22,6 +25,10 @@ class NeighbourHood(models.Model):
 
     def delete_neighborhood(self):
         self.delete()
+
+    @classmethod
+    def all_neighborhoods(cls):
+        return cls.objects.all()
 
     @classmethod
     def search_neighborhood(cls, neighborhood_id):

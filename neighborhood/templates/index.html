@@ -4,5 +4,10 @@
 
 {% block content %}
     <h1 class="text-center">Neighborhood Watch</h1>
+    <div class="container">
+        {% for neighborhood in neighborhoods %}
+            <h2>{{neighborhood.name}}</h2>
+        {% endfor %}
+    </div>
 {% endblock %}
 
