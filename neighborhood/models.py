@@ -43,6 +43,7 @@ class UserProfile(models.Model):
     neighbourhood = models.ForeignKey(Neighbourhood, on_delete=models.SET_NULL, null=True, related_name='ocupants', blank=True)
     email = models.EmailField(max_length=100)
 
+
     def __str__(self):
         return f'{self.user.username} profile'
 
@@ -63,6 +64,11 @@ class Business(models.Model):
     neighbourhood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE, related_name='business')
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='owner')
     date = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    price = models.IntegerField(null=True)
+
+
+    class Meta:
+       ordering = ['-date']
 
     def __str__(self):
         return f'{self.name} Business'
