@@ -1,6 +1,44 @@
 h1{
-    color: #e5383b;
+    color: #219ebc;
     font-weight: bold;
     text-transform: uppercase;
+    margin-top: 30px;
 }
 
+.lead{
+    margin-bottom: 30px;
+}
+
+.hoods{
+    margin-right: 60px;
+    margin-bottom: 60px;
+    border: #e5383b solid 5px;
+    padding: 20px;
+    
+}
+
+hr{
+    border-color: #e5383b;
+
+}
+
+.hood-name{
+    background-color: #e5383b;
+    padding: 10px 0; 
+    color: white;
+    font-weight: bold;
+}
+
+
+.highlight{
+    color: #e5383b;
+    font-weight: bold;
+}
+
+.business{
+    margin-bottom: 30px;
+}
+
+.post-form{
+    margin-top: 30px;
+}
