@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             {% for neighborhood in neighborhoods %}
-            <div class="col-sm-6 col-md-4 col-lg-5 hoods card mb-4">
+            <div class="col-sm-12 col-md-12 col-lg-5 hoods card mb-4">
                 <h2 class="text-center hood-name">{{neighborhood.name}}</h2>
                 <p class="text-center">Location: <span class="highlight">{{neighborhood.location}}</span></p>
                 {% cloudinary neighborhood.logo format="jpg" width=300 height=200 crop="" %}
