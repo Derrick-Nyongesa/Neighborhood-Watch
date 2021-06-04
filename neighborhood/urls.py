@@ -10,4 +10,5 @@ urlpatterns = [
     path('profile/<username>/update', views.edit_profile, name='update'),
     path('enter/<id>', views.enter_neighborhood, name='enter'),
     path('leave/<id>', views.leave_neighborhood, name='leave'),
+    path('<id>/occupants', views.occupants, name='occupants'),
 ]
