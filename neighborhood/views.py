@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .models import Business, Neighbourhood,UserProfile,Post
-from .forms import BusinessForm
+from .forms import BusinessForm,PostForm
 
 # Create your views here.
 @login_required (login_url='/accounts/login/')
@@ -28,13 +28,24 @@ def neighborhood(request, id):
             form = BusinessForm()
     else:
         form = BusinessForm()
+
+    if request.method == 'POST':
+        postForm = PostForm(request.POST)
+        if postForm.is_valid():
+            p_form = form.save(commit=False)
+            p_form.neighbourhood = neighborhood
+            p_form.user = current_user
+            p_form.save()
+            postForm = PostForm()
+    else:
+        postForm = PostForm()
     # # params = {
     #     ,
     #     ,
     #     ,
     #     'posts': posts
     # }
-    return render(request, 'neighborhood.html', {'neighborhood': neighborhood, 'form': form, 'business': business})
+    return render(request, 'neighborhood.html', {'neighborhood': neighborhood, 'form': form, 'business': business, 'postForm':postForm})
 
 
 @login_required(login_url='/accounts/login/')

@@ -91,5 +91,11 @@ class Post(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='post_owner')
     neighborhood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE, related_name='neighborhood_post')
 
+    class Meta:
+       ordering = ['-date']
+
+    def __str__(self):
+        return self.title
+
 
 
