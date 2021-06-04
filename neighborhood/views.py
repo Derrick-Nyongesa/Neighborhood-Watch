@@ -22,7 +22,7 @@ def neighborhood(request, id):
         form = BusinessForm(request.POST)
         if form.is_valid():
             b_form = form.save(commit=False)
-            #b_form.neighbourhood = hood
+            b_form.neighbourhood = neighborhood
             b_form.user = current_user
             b_form.save()
             form = BusinessForm()
