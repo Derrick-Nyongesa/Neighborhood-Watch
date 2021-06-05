@@ -98,7 +98,8 @@
             <div class="col-sm-6 col-lg-12 hoods">
                 <h2 class="text-center highlight">{{post.title}}</h2>
                 <p>{{post.post}}</p>
-                <p>Posted on {{post.date}}</p> 
+                <p>From:  <span class="highlight">{{post.user.username}}</span></p>
+                <p>Posted on{{post.date}}</p> 
             </div>
             {% endfor %}
         </div>
