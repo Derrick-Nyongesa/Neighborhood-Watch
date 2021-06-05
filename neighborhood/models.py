@@ -20,7 +20,11 @@ class Neighbourhood(models.Model):
     def __str__(self):
         return f'{self.name} neighbhood'
 
+
     def create_neighborhood(self):
+        self.save()
+
+    def save_neighborhood(self):
         self.save()
 
     def delete_neighborhood(self):
@@ -77,8 +81,15 @@ class Business(models.Model):
     def create_business(self):
         self.save()
 
+    def save_business(self):
+        self.save()
+
     def delete_business(self):
         self.delete()
+
+    @classmethod
+    def all_businesses(cls):
+        return cls.objects.all()
 
     @classmethod
     def search_business(cls, name):
