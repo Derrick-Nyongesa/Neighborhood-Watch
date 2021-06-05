@@ -8,7 +8,7 @@ Derrick Nyongesa
 
 
 ## Description
-This is a neighborhood-watch Django application where a user must signup first, be able to join a neighborhood of their choice and once you join a neighborhoodhood, the user can see and add businesses and see and add posts in only that neighborhood they belong to.
+This is a neighborhood-watch Django application where a user must signup first, be able to join a neighborhood of their choice and once you join a neighborhood, the user can see and add businesses and see and add posts in only that neighborhood they belong to.
 
 
 ## MOCKUP DESIGN
